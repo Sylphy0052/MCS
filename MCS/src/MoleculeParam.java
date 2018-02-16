@@ -21,4 +21,27 @@ public class MoleculeParam {
 		volume = Math.pow(size, 3);
 	}
 
+	public int getNumMolecule() {
+		return numMolecule;
+	}
+
+	public MoleculeType getMoleculeType() {
+		return moleculeType;
+	}
+
+	public MovementType getMovementType() {
+		return movementType;
+	}
+
+	public int getAdaptiveChange() {
+		return adaptiveChange;
+	}
+
+	public double getSize() {
+		return size;
+	}
+
+	public double getVolume() {
+		return volume;
+	}
 }

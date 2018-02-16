@@ -1,4 +1,4 @@
 
-public class IntermediateNode extends NanoMachine {
-
-}
+//public class IntermediateNode extends NanoMachine {
+//
+//}

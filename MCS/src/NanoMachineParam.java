@@ -12,4 +12,18 @@ public class NanoMachineParam {
 		size = Integer.parseInt(ps[4]);
 		releasePosition = new Position(Integer.parseInt(ps[5]), Integer.parseInt(ps[6]), Integer.parseInt(ps[7]));
 	}
+
+	public Position getCenterPosition() {
+		return centerPosition;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public Position getReleasePosition() {
+		return releasePosition;
+	}
+	
+	
 }

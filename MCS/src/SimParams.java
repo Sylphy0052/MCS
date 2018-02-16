@@ -1,6 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public class SimParams {
 	private String inputFileName = "input0.dat";
@@ -13,14 +13,13 @@ public class SimParams {
 	private int maxSimulationStep = 25000000;
 	private NanoMachineParam transmitter = null;
 	private NanoMachineParam receiver = null;
-	private ArrayList<IntermediateNodeParam> intermediateNode = new ArrayList<>();
+	private HashSet<IntermediateNodeParam> intermediateNode = new HashSet<>();
 	private int numMessages = 1;
 	private int numRetransmissions = 0;
 	private int retransmitWaitTime = 25000000;
 	private double stepLengthX = 1.0;
 	private double stepLengthY = 1.0;
 	private double stepLengthZ = 1.0;
-//	private ArrayList<MoleculeParam> moleculeParams = new ArrayList<>();
 	private MoleculeParam infoMoleculeParam = null;
 	private MoleculeParam ackMoleculeParam = null;
 	private MoleculeParam noiseMoleculeParam = null;
@@ -29,7 +28,7 @@ public class SimParams {
 	private boolean useCollisions = false;
 	private boolean useAcknowledgements = false;
 	private boolean decomposing = false;
-	private ArrayList<MicrotubuleParam> microtubuleParams = new ArrayList<>();
+	private HashSet<MicrotubuleParam> microtubuleParams = new HashSet<>();
 	private String outputFile = "output.txt";
 	
 	public SimParams(String[] args) {
@@ -190,7 +189,7 @@ public class SimParams {
 		return receiver;
 	}
 
-	public ArrayList<IntermediateNodeParam> getIntermediateNode() {
+	public HashSet<IntermediateNodeParam> getIntermediateNode() {
 		return intermediateNode;
 	}
 
@@ -250,7 +249,7 @@ public class SimParams {
 		return decomposing;
 	}
 
-	public ArrayList<MicrotubuleParam> getMicrotubuleParams() {
+	public HashSet<MicrotubuleParam> getMicrotubuleParams() {
 		return microtubuleParams;
 	}
 
