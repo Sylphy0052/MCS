@@ -37,6 +37,15 @@ public class MediumMap {
 		grid.put(p, hs);
 	}
 	
+	public void remove(Molecule m) {
+		Position p = m.getPosition();
+		grid.get(p).remove(m);
+	}
+	
+	public HashSet<Object> getAtPos(Position p) {
+		return grid.get(p);
+	}
+	
 	public void printInfo() {
 		for(Entry<Position, HashSet<Object>> entry: grid.entrySet()) {
 			System.out.println(entry.getKey() + " -> " + entry.getValue());

@@ -30,7 +30,7 @@ public class ThreePosition {
 	
 	public boolean contain(Position pos) {
 		for(Position p: threePosition) {
-			if(pos == p) {
+			if(pos.equal(p)) {
 				return true;
 			}
 		}

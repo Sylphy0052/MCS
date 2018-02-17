@@ -11,8 +11,10 @@ public class MolComSim {
 	private Medium medium;
 
 	public static void main(String[] args) throws IOException {
+		long start = System.currentTimeMillis();
 		MolComSim sim = createInstance();
 		sim.startSim(args);
+		System.out.println(String.format("Finish: %d ms", System.currentTimeMillis() - start));
 	}
 	
 	private void startSim(String[] args) throws IOException {
@@ -21,6 +23,24 @@ public class MolComSim {
 		params = new SimParams(args);
 		outputFile = new FileWriter(params.getOutputFile());
 		createMedium();
+		run();
+	}
+	
+	private void run() {
+		for(; medium.getMolecules().size() != 0; step++) {
+			if(step % 10000 == 9999) {
+				System.out.println(step + 1 + " : " + medium.getMolecules().size());
+			}
+			lastMsgCompleted = medium.nextStep();
+			if(!params.isWait() && lastMsgCompleted) {
+				break;
+			}
+		}
+		finishSim();
+	}
+	
+	private void finishSim() {
+		System.out.println("Finish: " + step);
 	}
 	
 	private static MolComSim createInstance() {
